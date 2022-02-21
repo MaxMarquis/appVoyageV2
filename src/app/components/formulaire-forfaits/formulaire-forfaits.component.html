@@ -1,0 +1,111 @@
+<form #forfaitForm="ngForm">
+    <!-- Destination -->
+    <mat-form-field required appearance="fill" class="half-width">
+        <mat-label>Destination</mat-label>
+        <input name="destination" [(ngModel)]="forfait.destination" #destination="ngModel" matInput required
+            minlength="2" maxlength="50" placeholder="Ex. Paris">
+    </mat-form-field>
+    <!-- Ville Départ -->
+    <mat-form-field required appearance="fill" class="half-width">
+        <mat-label>Ville de Départ</mat-label>
+        <input name="villeDepart" [(ngModel)]="forfait.villeDepart" #villeDepart="ngModel" required matInput
+            minlength="2" maxlength="50" placeholder="Ex. Montréal">
+        <mat-error
+            *ngIf="villeDepart.invalid && (villeDepart.dirty || villeDepart.touched) && villeDepart.hasError('required')">
+            La ville de départ est obligatoire.</mat-error>
+    </mat-form-field>
+    <!-- Nom Hotel -->
+    <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Nom de l'hôtel</mat-label>
+        <input name="nom" [(ngModel)]="forfait.hotel.nom" #nom="ngModel" required matInput
+            placeholder="Ex. Holiday Inn">
+        <mat-error *ngIf="nom.invalid && (nom.dirty || nom.touched) && nom.hasError('required')">
+            Le nom de l'hotel est obligatoire.</mat-error>
+    </mat-form-field>
+    <!-- Hotel Coordonnees -->
+    <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Coordonées</mat-label>
+        <input name="coordonnees" [(ngModel)]="forfait.hotel.coordonnees" #coordonnees="ngModel" required matInput
+            placeholder="Ex. 123 rue xyz">
+        <mat-error
+            *ngIf="coordonnees.invalid && (coordonnees.dirty || coordonnees.touched) && coordonnees.hasError('required')">
+            Le nom de l'hotel est obligatoire.</mat-error>
+    </mat-form-field>
+    <!-- Nombre Etoiles -->
+    <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Nombre d'étoiles</mat-label>
+        <input name="nombreEtoiles" [(ngModel)]="forfait.hotel.nombreEtoiles" #nombreEtoiles="ngModel" type="number"
+            required matInput placeholder="Entre 0 - 10">
+        <mat-error
+            *ngIf="nombreEtoiles.invalid && (nombreEtoiles.dirty || nombreEtoiles.touched) && nombreEtoiles.hasError('required')">
+            Le nombre d'étoiles de l'hotel est obligatoire.</mat-error>
+    </mat-form-field>
+    <!-- Nombre Chambres -->
+    <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Nombre de chambres</mat-label>
+        <input name="nombreChambres" [(ngModel)]="forfait.hotel.nombreChambres" #nombreChambres="ngModel" type="number"
+            required matInput placeholder="Ex. 322">
+        <mat-error
+            *ngIf="nombreChambres.invalid && (nombreChambres.dirty || nombreChambres.touched) && nombreChambres.hasError('required')">
+            Le nombre de chambres de l'hotel est obligatoire.</mat-error>
+    </mat-form-field>
+    <!-- Caracteristiques -->
+    <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Caractéristiques</mat-label>
+        <input name="caracteristiques" [(ngModel)]="forfait.hotel.caracteristiques" #caracteristiques="ngModel" required
+            matInput placeholder="Ex. Plage; Piscine">
+        <mat-error
+            *ngIf="caracteristiques.invalid && (caracteristiques.dirty || caracteristiques.touched) && caracteristiques.hasError('required')">
+            Le nom de l'hotel est obligatoire.</mat-error>
+    </mat-form-field>
+    <!-- Date Départ -->
+    <!-- <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Date de départ</mat-label>
+        <input name="dateDepart" [(ngModel)]="forfait.dateDepart" #dateDepart="ngModel" type="date" required matInput>
+        <mat-error
+            *ngIf="dateDepart.invalid && (dateDepart.dirty || dateDepart.touched) && dateDepart.hasError('required')">
+            Le nom de l'hotel est obligatoire.</mat-error>
+    </mat-form-field> -->
+    <!-- Date Retour -->
+    <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Date de retour</mat-label>
+        <input name="dateRetour" [(ngModel)]="forfait.dateRetour" #dateRetour="ngModel" type="date" required matInput>
+        <mat-error
+            *ngIf="dateRetour.invalid && (dateRetour.dirty || dateRetour.touched) && dateRetour.hasError('required')">
+            Le nom de l'hotel est obligatoire.</mat-error>
+    </mat-form-field>
+    <!-- Prix -->
+    <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Prix</mat-label>
+        <input name="prix" [(ngModel)]="forfait.prix" #prix="ngModel" type="number" required matInput
+            placeholder="Ex. 1300">
+        <mat-error *ngIf="prix.invalid && (prix.dirty || prix.touched) && prix.hasError('required')">
+            Le nom de l'hotel est obligatoire.</mat-error>
+        <span matSuffix>$&nbsp;</span>
+    </mat-form-field>
+    <!-- Rabais -->
+    <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Rabais</mat-label>
+        <input name="rabais" [(ngModel)]="forfait.rabais" #rabais="ngModel" type="number" required matInput
+            placeholder="Ex. 250">
+        <mat-error *ngIf="rabais.invalid && (rabais.dirty || rabais.touched) && rabais.hasError('required')">
+            Le nom de l'hotel est obligatoire.</mat-error>
+        <span matSuffix>$&nbsp;</span>
+    </mat-form-field>
+    <!-- Vedette -->
+    <!-- <div class="mat-form-field">
+        <mat-checkbox ([(ngModel)]="forfait.vedette" )></mat-checkbox>
+    </div> -->
+
+    <!-- <mat-form-field appearance="fill">
+        <mat-label>Favorite food</mat-label>
+        <mat-select>
+            <mat-option ([(ngModel)]="forfait.vedette" )>Oui</mat-option>
+            <mat-option ([(ngModel)]="forfait.vedette" )>Non</mat-option>
+        </mat-select>
+    </mat-form-field> -->
+
+    <button matSuffix type="submit" mat-raised-button (click)="onCancel()">Annuler</button>&nbsp;
+    <button matSuffix type="submit" mat-raised-button [disabled]="!forfaitForm.form.valid"
+        (click)="onSave(forfaitForm)">ok</button>
+</form>

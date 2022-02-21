@@ -1,0 +1,24 @@
+table {
+  width: 100%;
+}
+.mat-column-dateDepart {
+  width: 10rem;
+  padding-left: 1rem;
+}
+.mat-column-dateRetour {
+  width: 10rem;
+}
+.mat-column-id {
+  width: 12rem;
+  padding-right: 1rem;
+  border-right: 1px solid currentColor;
+}
+.mat-column-destination {
+  width: 8rem;
+}
+.mat-column-villeDepart {
+  width: 8rem;
+}
+.mat-column-actions {
+  padding-left: 5rem;
+}

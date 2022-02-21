@@ -1,0 +1,9 @@
+.container {
+  width: 50%;
+  margin: auto;
+}
+#titre {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 2rem;
+}

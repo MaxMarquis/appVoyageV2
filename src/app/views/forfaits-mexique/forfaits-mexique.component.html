@@ -1,0 +1,5 @@
+<div>
+    <ng-container *ngFor="let forfait of forfaits">
+        <app-forfait-complet [forfait]="forfait" *ngIf="forfait.destination == 'Mexique' "></app-forfait-complet>
+    </ng-container>
+</div>

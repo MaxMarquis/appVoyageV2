@@ -1,0 +1,40 @@
+:host {
+  display: block;
+  min-width: 33%;
+  flex-grow: 1;
+}
+
+.miniForfait {
+  display: flex;
+  height: 6rem;
+  border-radius: 0;
+  justify-content: space-between;
+}
+
+.droite {
+  text-align: right;
+}
+.prixBarre {
+  text-decoration: line-through;
+  color: red;
+}
+.rabais {
+  color: green;
+}
+.prixRabais {
+  border: 3px solid yellow;
+  border-radius: 10%;
+  padding: 2px 6px;
+  margin: -5px 0 5px 0;
+}
+.jours {
+  color: rgb(185, 5, 5);
+  font-weight: bold;
+}
+.containerPrix {
+  display: flex;
+  justify-content: space-between;
+}
+.prix {
+  display: block;
+}

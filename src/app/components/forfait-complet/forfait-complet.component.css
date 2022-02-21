@@ -1,0 +1,75 @@
+:host {
+  display: block;
+  flex-grow: 1;
+}
+
+.ForfaitComplet {
+  display: flex;
+  border-radius: 0;
+}
+.forfaitVedette {
+  color: rgb(247, 247, 2);
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+img {
+  width: 230px;
+  height: 230px;
+  object-fit: cover;
+}
+
+.rabais {
+  text-decoration: line-through;
+  color: red;
+}
+
+.prix {
+  color: #002855;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.centre {
+  margin-left: 1rem;
+  flex-grow: 1;
+}
+
+.destination {
+  color: #696969;
+}
+
+.jours {
+  color: rgb(185, 5, 5);
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.hotel {
+  color: #0071b3;
+  margin: 1rem 0rem;
+}
+
+.droite {
+  text-align: right;
+}
+
+p {
+  margin: 1rem 0rem;
+}
+
+.btn-vert {
+  background-color: #008200;
+  color: white;
+  border: 0;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  padding: 1rem 3rem;
+  cursor: pointer;
+}
+
+.btn-vert:hover {
+  background-color: white;
+  color: #008200;
+  border: 0.3rem solid #c2c2c2;
+}

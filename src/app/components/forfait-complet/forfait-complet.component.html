@@ -1,0 +1,30 @@
+<div>
+  <mat-card class="ForfaitComplet">
+    <div class="gauche">
+      <img src="../../../assets/img/Barcelo-Arenas-Blancas-Pool-001.jpg">
+    </div>
+    <div class="centre">
+      <mat-card-subtitle *ngIf="forfait.vedette" class="forfaitVedette">Forfait Vedette</mat-card-subtitle>
+      <mat-card-subtitle class="destination">{{forfait.destination}} De {{forfait.villeDepart}}</mat-card-subtitle>
+      <mat-card-title class="hotel">{{forfait.hotel.nom}}</mat-card-title>
+      <p>({{forfait.hotel.nombreChambres}} chambres)</p>
+      <app-etoiles [nombreEtoiles]="forfait.hotel.nombreEtoiles"></app-etoiles>
+      <p>{{forfait.hotel.caracteristiques}}</p>
+      <p>{{forfait.hotel.coordonnees}}</p>
+    </div>
+    <div class="droite">
+      <p *ngIf="forfait.rabais > 0; else elseBlock">
+        <span class="rabais">{{forfait.prix}}$</span>
+        <span class="prix"> {{forfait.prix -
+          forfait.rabais}}$</span>
+      </p>
+      <ng-template #elseBlock>
+        <p class="prix">{{forfait.prix}}$</p>
+      </ng-template>
+      <p class="taxes">Taces et frais inclus</p>
+      <p class="jours">{{nombreJours(forfait.dateDepart, forfait.dateRetour)}} Jours</p>
+      <p class="depart">Du {{forfait.dateDepart}} au {{forfait.dateRetour}}</p>
+      <button class="btn-vert">Choisir une chambre</button>
+    </div>
+  </mat-card>
+</div>

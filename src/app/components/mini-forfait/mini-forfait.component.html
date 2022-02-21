@@ -1,0 +1,25 @@
+<div>
+  <mat-card class="miniForfait">
+    <div>
+      <mat-card-subtitle>{{forfait.destination}} De {{forfait.villeDepart}}</mat-card-subtitle>
+      <mat-card-title>{{forfait.hotel.nom}}</mat-card-title>
+      <app-etoiles [nombreEtoiles]="forfait.hotel.nombreEtoiles"></app-etoiles>
+    </div>
+    <div class="droite">
+      <p class="prix" *ngIf="forfait.rabais == 0; else elseBlock">
+        {{forfait.prix}}$
+      </p>
+      <ng-template #elseBlock>
+        <p class="containerPrix">
+          <span class="prixBarre">{{forfait.prix}}$</span>
+          <span class="rabais">{{forfait.rabais}}$</span>
+          <span class="prixRabais"> {{forfait.prix -
+            forfait.rabais}}$</span>
+        </p>
+      </ng-template>
+      <p class="taxes">Taxes et frais inclus</p>
+      <p class="depart">{{forfait.dateDepart}}, <span class="jours">{{nombreJours(forfait.dateDepart,
+          forfait.dateRetour)}} jours</span></p>
+    </div>
+  </mat-card>
+</div>
