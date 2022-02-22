@@ -19,6 +19,8 @@ export class ForfaitsTableComponent implements OnInit {
     'destination',
     'villeDepart',
     'nomHotel',
+    'vedette',
+    'caracteristiques',
     'actions',
   ];
 
@@ -46,7 +48,7 @@ export class ForfaitsTableComponent implements OnInit {
           coordonnees: '',
           nombreEtoiles: 0,
           nombreChambres: 0,
-          caracteristiques: ['', '', ''],
+          caracteristiques: ["test", "test1"],
         },
         dateDepart: '',
         dateRetour: '',

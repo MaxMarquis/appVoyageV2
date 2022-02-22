@@ -16,9 +16,9 @@ export class FormulaireForfaitsComponent implements OnInit {
     hotel: {
       nom: '',
       coordonnees: '',
-      nombreEtoiles: 0,
+      nombreEtoiles: 10,
       nombreChambres: 0,
-      caracteristiques: ['', '', ''],
+      caracteristiques: [],
     },
     dateDepart: '',
     dateRetour: '',
@@ -41,6 +41,7 @@ export class FormulaireForfaitsComponent implements OnInit {
         });
       } else {
         // Sinon, on doit ajouter le produit
+        console.log(this.forfait)
         this.forfaitService.addForfait(this.forfait).subscribe((_) => {
           this.majTable.emit();
         });

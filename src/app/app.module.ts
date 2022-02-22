@@ -25,7 +25,6 @@ import { FormulaireForfaitsComponent } from './components/formulaire-forfaits/fo
 import { MiniForfaitComponent } from './components/mini-forfait/mini-forfait.component';
 import { ForfaitCompletComponent } from './components/forfait-complet/forfait-complet.component';
 import { EtoilesComponent } from './components/etoiles/etoiles.component';
-import { FormulaireRechercheComponent } from './components/formulaire-recherche/formulaire-recherche.component';
 import { DialogFormulaireForfaitComponent } from './components/dialog-formulaire-forfait/dialog-formulaire-forfait.component';
 
 import { ForfaitsParisComponent } from './views/forfaits-paris/forfaits-paris.component';
@@ -40,7 +39,6 @@ import { AdminComponent } from './views/admin/admin.component';
     MiniForfaitComponent,
     ForfaitCompletComponent,
     EtoilesComponent,
-    FormulaireRechercheComponent,
     MyheaderComponent,
     AccueilComponent,
     AproposComponent,
@@ -71,4 +69,4 @@ import { AdminComponent } from './views/admin/admin.component';
   providers: [ForfaitService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

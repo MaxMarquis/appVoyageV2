@@ -15,5 +15,5 @@ export interface Hotel {
   coordonnees: string;
   nombreEtoiles: number;
   nombreChambres: number;
-  caracteristiques: [string, string, string];
+  caracteristiques: string[];
 }

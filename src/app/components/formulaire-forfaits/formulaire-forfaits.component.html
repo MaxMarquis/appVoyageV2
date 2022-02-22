@@ -32,72 +32,75 @@
             Le nom de l'hotel est obligatoire.</mat-error>
     </mat-form-field>
     <!-- Nombre Etoiles -->
-    <mat-form-field appearance="fill" class="full-width">
+    <mat-form-field appearance="fill" class="half-width">
         <mat-label>Nombre d'étoiles</mat-label>
         <input name="nombreEtoiles" [(ngModel)]="forfait.hotel.nombreEtoiles" #nombreEtoiles="ngModel" type="number"
-            required matInput placeholder="Entre 0 - 10">
+            required matInput placeholder="Entre 0 - 10" max="10">
         <mat-error
             *ngIf="nombreEtoiles.invalid && (nombreEtoiles.dirty || nombreEtoiles.touched) && nombreEtoiles.hasError('required')">
-            Le nombre d'étoiles de l'hotel est obligatoire.</mat-error>
+            Le nombre d'étoiles est obligatoire.</mat-error>
     </mat-form-field>
     <!-- Nombre Chambres -->
-    <mat-form-field appearance="fill" class="full-width">
+    <mat-form-field appearance="fill" class="half-width">
         <mat-label>Nombre de chambres</mat-label>
         <input name="nombreChambres" [(ngModel)]="forfait.hotel.nombreChambres" #nombreChambres="ngModel" type="number"
             required matInput placeholder="Ex. 322">
         <mat-error
             *ngIf="nombreChambres.invalid && (nombreChambres.dirty || nombreChambres.touched) && nombreChambres.hasError('required')">
-            Le nombre de chambres de l'hotel est obligatoire.</mat-error>
+            Le nombre de chambres est obligatoire.</mat-error>
     </mat-form-field>
     <!-- Caracteristiques -->
     <mat-form-field appearance="fill" class="full-width">
         <mat-label>Caractéristiques</mat-label>
         <input name="caracteristiques" [(ngModel)]="forfait.hotel.caracteristiques" #caracteristiques="ngModel" required
-            matInput placeholder="Ex. Plage; Piscine">
+            matInput placeholder="Ex. Plage, Piscine">
         <mat-error
             *ngIf="caracteristiques.invalid && (caracteristiques.dirty || caracteristiques.touched) && caracteristiques.hasError('required')">
-            Le nom de l'hotel est obligatoire.</mat-error>
+            Vous devez entrer au moins 1 caractéristique</mat-error>
     </mat-form-field>
     <!-- Date Départ -->
-    <mat-form-field appearance="fill" class="full-width">
+    <mat-form-field appearance="fill" class="half-width">
         <mat-label>Date de départ</mat-label>
         <input name="dateDepart" [(ngModel)]="forfait.dateDepart" #dateDepart="ngModel" type="date" required matInput>
         <mat-error
             *ngIf="dateDepart.invalid && (dateDepart.dirty || dateDepart.touched) && dateDepart.hasError('required')">
-            Le nom de l'hotel est obligatoire.</mat-error>
+            La date de départ est obligatoire.</mat-error>
     </mat-form-field>
     <!-- Date Retour -->
-    <mat-form-field appearance="fill" class="full-width">
+    <mat-form-field appearance="fill" class="half-width">
         <mat-label>Date de retour</mat-label>
         <input name="dateRetour" [(ngModel)]="forfait.dateRetour" #dateRetour="ngModel" type="date" required matInput>
         <mat-error
             *ngIf="dateRetour.invalid && (dateRetour.dirty || dateRetour.touched) && dateRetour.hasError('required')">
-            Le nom de l'hotel est obligatoire.</mat-error>
+            La date de retour est obligatoire.</mat-error>
     </mat-form-field>
     <!-- Prix -->
-    <mat-form-field appearance="fill" class="full-width">
+    <mat-form-field appearance="fill" class="half-width">
         <mat-label>Prix</mat-label>
         <input name="prix" [(ngModel)]="forfait.prix" #prix="ngModel" type="number" required matInput
             placeholder="Ex. 1300">
         <mat-error *ngIf="prix.invalid && (prix.dirty || prix.touched) && prix.hasError('required')">
-            Le nom de l'hotel est obligatoire.</mat-error>
+            Le prix est obligatoire.</mat-error>
         <span matSuffix>$&nbsp;</span>
     </mat-form-field>
     <!-- Rabais -->
-    <mat-form-field appearance="fill" class="full-width">
+    <mat-form-field appearance="fill" class="half-width">
         <mat-label>Rabais</mat-label>
         <input name="rabais" [(ngModel)]="forfait.rabais" #rabais="ngModel" type="number" required matInput
             placeholder="Ex. 250">
         <mat-error *ngIf="rabais.invalid && (rabais.dirty || rabais.touched) && rabais.hasError('required')">
-            Le nom de l'hotel est obligatoire.</mat-error>
+            S'il n'y a pas de rabais, mettre la valeur à 0</mat-error>
         <span matSuffix>$&nbsp;</span>
     </mat-form-field>
     <!-- Vedette -->
     <div class="mat-form-field">
+        <mat-label>Vedette: </mat-label>
         <mat-checkbox name="vedette" #vedette="ngModel" [(ngModel)]="forfait.vedette"></mat-checkbox>
     </div>
 
-    <button matSuffix type="submit" mat-raised-button (click)="onCancel()">Annuler</button>&nbsp;
-    <button matSuffix type="submit" mat-raised-button [disabled]="!forfaitForm.form.valid"
-        (click)="onSave(forfaitForm)">ok</button>
+    <div class="buttons">
+        <button matSuffix type="submit" mat-raised-button [disabled]="!forfaitForm.form.valid"
+            (click)="onSave(forfaitForm)">Appliquer</button>
+        <button matSuffix type="submit" mat-raised-button (click)="onCancel()">Annuler</button>&nbsp;
+    </div>
 </form>

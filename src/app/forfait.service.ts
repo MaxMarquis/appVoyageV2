@@ -14,7 +14,7 @@ export class ForfaitService {
   // forfaitUrl = 'https://forfaits-voyages-2022.herokuapp.com/api/192837465/forfaits/';
   forfaitUrl = 'http://localhost/api-forfaits/api/';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getForfaits(): Observable<Forfait[]> {
     return this.http.get<Forfait[]>(this.forfaitUrl);
@@ -24,12 +24,12 @@ export class ForfaitService {
   }
   editForfait(forfait: Forfait): Observable<Forfait> {
     return this.http.put<Forfait>(
-      this.forfaitUrl + forfait.id,
+      this.forfaitUrl + "?id=" + forfait.id,
       forfait,
       httpOptions
     );
   }
   deleteForfait(id: number): Observable<Forfait> {
-    return this.http.delete<Forfait>(this.forfaitUrl + id);
+    return this.http.delete<Forfait>(this.forfaitUrl + "?id=" + id);
   }
 }

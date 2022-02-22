@@ -1,0 +1,19 @@
+.half-width{
+    width: 50%;
+}
+.full-width{
+    width: 100%;
+}
+.buttons{
+    margin-top: 1rem;
+    margin-left: auto;
+    text-align: right;
+}
+button{
+    width: 7rem;
+    margin-right: 1rem;
+}
+button:hover{
+    color: blue;
+    background-color: darkgrey;
+}
