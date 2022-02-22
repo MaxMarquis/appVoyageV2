@@ -25,7 +25,7 @@ export class ForfaitsTableComponent implements OnInit {
   constructor(
     private forfaitService: ForfaitService,
     public dialog: MatDialog
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getForfaits();
@@ -38,7 +38,7 @@ export class ForfaitsTableComponent implements OnInit {
   onSelect(forfait?: Forfait): void {
     if (!forfait) {
       this.forfaitSelected = {
-        _id: '',
+        id: 0,
         destination: '',
         villeDepart: '',
         hotel: {
@@ -71,7 +71,7 @@ export class ForfaitsTableComponent implements OnInit {
   }
   onDelete(forfait: Forfait): void {
     this.forfaitService
-      .deleteForfait(forfait._id)
+      .deleteForfait(forfait.id)
       .subscribe(
         (_) => (this.forfaits = this.forfaits.filter((p) => p !== forfait))
       );

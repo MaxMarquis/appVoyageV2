@@ -59,13 +59,13 @@
             Le nom de l'hotel est obligatoire.</mat-error>
     </mat-form-field>
     <!-- Date Départ -->
-    <!-- <mat-form-field appearance="fill" class="full-width">
+    <mat-form-field appearance="fill" class="full-width">
         <mat-label>Date de départ</mat-label>
         <input name="dateDepart" [(ngModel)]="forfait.dateDepart" #dateDepart="ngModel" type="date" required matInput>
         <mat-error
             *ngIf="dateDepart.invalid && (dateDepart.dirty || dateDepart.touched) && dateDepart.hasError('required')">
             Le nom de l'hotel est obligatoire.</mat-error>
-    </mat-form-field> -->
+    </mat-form-field>
     <!-- Date Retour -->
     <mat-form-field appearance="fill" class="full-width">
         <mat-label>Date de retour</mat-label>
@@ -93,17 +93,9 @@
         <span matSuffix>$&nbsp;</span>
     </mat-form-field>
     <!-- Vedette -->
-    <!-- <div class="mat-form-field">
-        <mat-checkbox ([(ngModel)]="forfait.vedette" )></mat-checkbox>
-    </div> -->
-
-    <!-- <mat-form-field appearance="fill">
-        <mat-label>Favorite food</mat-label>
-        <mat-select>
-            <mat-option ([(ngModel)]="forfait.vedette" )>Oui</mat-option>
-            <mat-option ([(ngModel)]="forfait.vedette" )>Non</mat-option>
-        </mat-select>
-    </mat-form-field> -->
+    <div class="mat-form-field">
+        <mat-checkbox name="vedette" #vedette="ngModel" [(ngModel)]="forfait.vedette"></mat-checkbox>
+    </div>
 
     <button matSuffix type="submit" mat-raised-button (click)="onCancel()">Annuler</button>&nbsp;
     <button matSuffix type="submit" mat-raised-button [disabled]="!forfaitForm.form.valid"

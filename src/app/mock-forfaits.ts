@@ -2,7 +2,7 @@ import { Forfait } from './forfait';
 
 export const FORFAITS: Forfait[] = [
   {
-    _id: '1',
+    id: 1,
     destination: 'Angleterre',
     villeDepart: 'Québec',
     hotel: {
@@ -19,7 +19,7 @@ export const FORFAITS: Forfait[] = [
     vedette: true,
   },
   {
-    _id: '2',
+    id: 2,
     destination: 'Belgique',
     villeDepart: 'Québec',
     hotel: {
@@ -36,7 +36,7 @@ export const FORFAITS: Forfait[] = [
     vedette: false,
   },
   {
-    _id: '3',
+    id: 3,
     destination: 'Écosse',
     villeDepart: 'Québec',
     hotel: {
@@ -53,7 +53,7 @@ export const FORFAITS: Forfait[] = [
     vedette: true,
   },
   {
-    _id: '4',
+    id: 4,
     destination: 'France',
     villeDepart: 'Québec',
     hotel: {
@@ -70,7 +70,7 @@ export const FORFAITS: Forfait[] = [
     vedette: false,
   },
   {
-    _id: '5',
+    id: 5,
     destination: 'Irlande',
     villeDepart: 'Québec',
     hotel: {
@@ -87,7 +87,7 @@ export const FORFAITS: Forfait[] = [
     vedette: true,
   },
   {
-    _id: '6',
+    id: 6,
     destination: 'Pays-Bas',
     villeDepart: 'Québec',
     hotel: {
@@ -104,7 +104,7 @@ export const FORFAITS: Forfait[] = [
     vedette: false,
   },
   {
-    _id: '7',
+    id: 7,
     destination: 'Portugal',
     villeDepart: 'Québec',
     hotel: {
@@ -121,7 +121,7 @@ export const FORFAITS: Forfait[] = [
     vedette: true,
   },
   {
-    _id: '8',
+    id: 8,
     destination: 'Suisse',
     villeDepart: 'Québec',
     hotel: {
@@ -138,7 +138,7 @@ export const FORFAITS: Forfait[] = [
     vedette: false,
   },
   {
-    _id: '9',
+    id: 9,
     destination: 'Espagne',
     villeDepart: 'Québec',
     hotel: {
@@ -155,7 +155,7 @@ export const FORFAITS: Forfait[] = [
     vedette: true,
   },
   {
-    _id: '10',
+    id: 10,
     destination: 'Grèce',
     villeDepart: 'Québec',
     hotel: {
@@ -173,7 +173,7 @@ export const FORFAITS: Forfait[] = [
     vedette: false,
   },
   {
-    _id: '11',
+    id: 11,
     destination: 'Italie',
     villeDepart: 'Québec',
     hotel: {

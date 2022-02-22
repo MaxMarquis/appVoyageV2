@@ -1,5 +1,5 @@
 export interface Forfait {
-  _id: string;
+  id: number;
   destination: string;
   villeDepart: string;
   hotel: Hotel;

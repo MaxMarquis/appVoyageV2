@@ -8,7 +8,7 @@ import { Forfait } from 'src/app/forfait';
 })
 export class ForfaitCompletComponent implements OnInit {
   @Input() forfait: Forfait = {
-    _id: '',
+    id: 0,
     destination: '',
     villeDepart: '',
     hotel: {
@@ -25,9 +25,9 @@ export class ForfaitCompletComponent implements OnInit {
     vedette: false,
   };
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   nombreJours(date1: any, date2: any) {
     var newDate1: any = new Date(date1);

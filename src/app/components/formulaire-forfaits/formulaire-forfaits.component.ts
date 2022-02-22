@@ -10,7 +10,7 @@ import { ForfaitService } from 'src/app/forfait.service';
 })
 export class FormulaireForfaitsComponent implements OnInit {
   @Input() forfait: Forfait = {
-    _id: '',
+    id: 0,
     destination: '',
     villeDepart: '',
     hotel: {
@@ -28,13 +28,13 @@ export class FormulaireForfaitsComponent implements OnInit {
   };
   @Output() majTable = new EventEmitter();
 
-  constructor(private forfaitService: ForfaitService) {}
+  constructor(private forfaitService: ForfaitService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   onSave(forfaitForm: NgForm) {
     if (forfaitForm.valid) {
-      if (this.forfait._id != null && this.forfait._id != '') {
+      if (this.forfait.id != null && this.forfait.id != 0) {
         // Si on a un id, on doit modifier le produit
         this.forfaitService.editForfait(this.forfait).subscribe((_) => {
           this.majTable.emit();

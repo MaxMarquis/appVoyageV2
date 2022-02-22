@@ -10,7 +10,7 @@ import { ForfaitCompletComponent } from '../forfait-complet/forfait-complet.comp
 })
 export class MiniForfaitComponent implements OnInit {
   @Input() forfait: Forfait = {
-    _id: '',
+    id: 0,
     destination: '',
     villeDepart: '',
     hotel: {
@@ -27,9 +27,9 @@ export class MiniForfaitComponent implements OnInit {
     vedette: false,
   };
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   // Tentative de compteur entre les dates, mais ne fonctionne pas :)
   nombreJours(date1: any, date2: any) {
