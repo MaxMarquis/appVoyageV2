@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Forfait } from './forfait';
+import { Reservation } from './reservation';
 // Test laptop
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -13,9 +14,13 @@ const httpOptions = {
 export class ForfaitService {
   // forfaitUrl = 'https://forfaits-voyages-2022.herokuapp.com/api/192837465/forfaits/';
   forfaitUrl = 'http://localhost/api-forfaits/api/';
+  reservationUrl = 'http://localhost/api-forfaits/api/reservations.php'
 
   constructor(private http: HttpClient) { }
 
+  getReservations(): Observable<Reservation[]> {
+    return this.http.get<Reservation[]>(this.reservationUrl);
+  }
   getForfaits(): Observable<Forfait[]> {
     return this.http.get<Forfait[]>(this.forfaitUrl);
   }

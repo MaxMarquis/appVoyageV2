@@ -32,6 +32,9 @@ import { AproposComponent } from './views/apropos/apropos.component';
 import { AccueilComponent } from './views/accueil/accueil.component';
 import { ForfaitsMexiqueComponent } from './views/forfaits-mexique/forfaits-mexique.component';
 import { AdminComponent } from './views/admin/admin.component';
+import { NgChartsModule } from 'ng2-charts';
+import { ChartsComponent } from './components/charts/charts.component';
+import { ChartsAssuranceComponent } from './components/charts-assurance/charts-assurance.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +51,8 @@ import { AdminComponent } from './views/admin/admin.component';
     ForfaitsTableComponent,
     FormulaireForfaitsComponent,
     DialogFormulaireForfaitComponent,
+    ChartsComponent,
+    ChartsAssuranceComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +70,7 @@ import { AdminComponent } from './views/admin/admin.component';
     MatInputModule,
     MatCheckboxModule,
     MatSelectModule,
+    NgChartsModule,
   ],
   providers: [ForfaitService],
   bootstrap: [AppComponent],
