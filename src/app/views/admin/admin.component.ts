@@ -10,7 +10,7 @@ import { Forfait } from 'src/app/forfait';
 export class AdminComponent implements OnInit {
   forfaits: Forfait[] = [];
 
-  constructor(private forfaitService: ForfaitService) {}
+  constructor(private forfaitService: ForfaitService) { }
 
   ngOnInit(): void {
     this.getForfaits();

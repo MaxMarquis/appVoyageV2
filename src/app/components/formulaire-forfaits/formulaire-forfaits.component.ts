@@ -8,6 +8,8 @@ import { ForfaitService } from 'src/app/forfait.service';
   templateUrl: './formulaire-forfaits.component.html',
   styleUrls: ['./formulaire-forfaits.component.css'],
 })
+
+// Petit bug avec les caractéristiques, l'input ne sort pas en tableau donc il ne veut pas s'envoyer
 export class FormulaireForfaitsComponent implements OnInit {
   @Input() forfait: Forfait = {
     id: 0,
